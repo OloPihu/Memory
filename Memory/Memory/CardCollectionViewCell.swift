@@ -53,9 +53,9 @@ class CardCollectionViewCell: UICollectionViewCell {
             UIView.transition(from: backImageView, to: frontImageView, duration: 0, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
             
         }
-        
+            
         else {
-         
+            
             // back imageview jest odsłoniete
             
             UIView.transition(from: frontImageView, to: backImageView, duration: 0, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
@@ -67,15 +67,15 @@ class CardCollectionViewCell: UICollectionViewCell {
         
         UIView.transition(from: backImageView, to: frontImageView, duration: 0.4, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
     }
-   
+    
     func flipBack() {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             
- UIView.transition(from: self.frontImageView, to: self.backImageView, duration: 0.4, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
+            UIView.transition(from: self.frontImageView, to: self.backImageView, duration: 0.4, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
             
         }
-       
+        
     }
     
     func remove() {
@@ -89,8 +89,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             
             self.frontImageView.alpha = 0
             
-            
-        }, completion: nil)
+            }, completion: nil)
         
         
         

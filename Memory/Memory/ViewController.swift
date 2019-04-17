@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // zamiana na sekundy
         
-       let seconds =  String(format: "%.2f", miliseconds/1000)
+        let seconds =  String(format: "%.2f", miliseconds/1000)
         
         // ustawienie etykiety
         
@@ -180,7 +180,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func checkForMataches(_ secondFlippedCardIndex:IndexPath) {
         
         //
-         let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
+        let cardOneCell = collectionView.cellForItem(at: firstFlippedCardIndex!) as? CardCollectionViewCell
         
         
         let cardTwoCell = collectionView.cellForItem(at: secondFlippedCardIndex) as? CardCollectionViewCell
@@ -237,7 +237,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collectionView.reloadItems(at: [firstFlippedCardIndex!])
         }
         
-   
+        
         firstFlippedCardIndex = nil
         
     }
@@ -266,30 +266,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if miliseconds > 0 {
                 
                 timer?.invalidate()
-            
+                
+            }
+            title = "Congratulations!"
+            message = "You've won"
         }
-        title = "Congratulations!"
-        message = "You've won"
-    }
         else {
             
             // jezli zostały jakiekolwiek karty pierw kontrola czy został czas
             if miliseconds > 0 {
                 return
             }
-          title = "Game Over"
+            title = "Game Over"
             message = "You've lost"
             
         }
         
-       
-// wiadomosc na wygrana lub przegrana
+        
+        // wiadomosc na wygrana lub przegrana
         showAlert(title, message)
-
-
-
-}
-
+        
+        
+        
+    }
+    
     func showAlert(_ title:String, _ message:String) {
         
         

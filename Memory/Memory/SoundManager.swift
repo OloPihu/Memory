@@ -10,7 +10,7 @@ import AVFoundation
 
 class SoundManager {
     
-     static var audioPlayer:AVAudioPlayer?
+    static var audioPlayer:AVAudioPlayer?
     
     enum SoundEffect {
         
@@ -25,7 +25,7 @@ class SoundManager {
     
     
     
-   static func playSound(_ effect:SoundEffect) {
+    static func playSound(_ effect:SoundEffect) {
         
         var soundFilename = ""
         
@@ -44,11 +44,11 @@ class SoundManager {
             
         case .nomatch:
             soundFilename = "dingwrong"
-        
+            
         }
         
-       let bundlePath = Bundle.main.path(forResource: soundFilename, ofType: "wav")
-     
+        let bundlePath = Bundle.main.path(forResource: soundFilename, ofType: "wav")
+        
         guard bundlePath != nil else {
             print("Couldn't find sound file \(soundFilename) in the bundle")
             return
@@ -58,12 +58,12 @@ class SoundManager {
         
         let soundURL = URL(fileURLWithPath: bundlePath!)
         do {
-        // tworze odtwarzacz audio
-        audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            // tworze odtwarzacz audio
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
         }
         catch {
             
-        //  wykazanie błedu z audio playerem
+            //  wykazanie błedu z audio playerem
             
             print("Couldn't create the audio player object for sound file \(soundFilename)")
             

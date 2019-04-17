@@ -30,7 +30,7 @@ class CardModel {
             // upewnienie sie ze losuje sie numer ktorego nie ma
             
             if generatedNumbersArray.contains(Int(randomNumber)) == false {
-               
+                
                 // wyswietlenie w konsoli generowanego numeru
                 print(randomNumber)
                 
@@ -60,7 +60,7 @@ class CardModel {
             
             
         }
-       
+        
         // losowe połozenie kart
         
         for i in 0...generatedCardArray.count {
@@ -73,7 +73,7 @@ class CardModel {
             generatedCardArray[0] = generatedCardArray[randomNumer]
             generatedCardArray[randomNumer] = temporaryStorage
         }
-            
+        
         
         
         // zwracam watrtosc tablicy
