@@ -60,6 +60,8 @@ class SoundManager {
         do {
             // tworze odtwarzacz audio
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            
+            audioPlayer?.play()
         }
         catch {
             
